@@ -18,9 +18,11 @@ const mongoose = require("mongoose");
 app.use(express.json()); //Middleware
 app.use(cors()); //cors-->middleware used to avoid cross origin resource sharing error(cors)
 
-mongoose.connect("mongodb://localhost:27017/expenses").then(() => {
-  console.log("connected to database");
-});
+mongoose
+  .connect("mongodb+srv://keerthana:keerthana@cluster0.vals6.mongodb.net/")
+  .then(() => {
+    console.log("connected to database");
+  });
 
 const userSchema = new mongoose.Schema({
   id: String,
